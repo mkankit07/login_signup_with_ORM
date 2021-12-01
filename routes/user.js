@@ -21,7 +21,7 @@ router.post('/signup',async(req,res)=>{
 
 })
 
-router.get('/login/in', (req, res) => {
+router.get('/login', (req, res) => {
     service.loginById(req.body).then((data) => { 
         console.log('successfull login')
         res.send(data)
