@@ -5,7 +5,7 @@ const users=require('./routes/user')
 
 app.use(express.json())
 
-app.use('/user',users)
+app.use('/',users)
 
 const PORT =process.env.db_port||8000;
 app.listen(PORT,()=>{
