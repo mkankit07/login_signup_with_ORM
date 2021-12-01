@@ -14,13 +14,14 @@ module.exports=class UserService{
             return ({ "Sorry": "user email or password not found" })
         }
         const logg = await Users.query().where('email', loged.email)
+        console.log(logg);
         if (!logg[0]) {
 
             return ({ "user": "email not correct" })
         }
-        if (logg) {
+        if (logg[0].password===password) {
             return ({ "user": "successful login" })
-        }
+        } return ({ "message": 'incorrect password' })
     }
 
 }
